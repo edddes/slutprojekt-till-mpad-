@@ -3,25 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Matplanering</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background: #f7f7f7; }
-        h1 { color: #333; }
-        form { margin-bottom: 20px; }
-        input[type="text"] { width: 400px; padding: 8px; font-size: 16px; }
-        button { padding: 8px 16px; font-size: 16px; }
-        ul { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px #ccc; }
-        li { margin-bottom: 18px; }
-        .missing { color: #b00; }
-        .matched { color: #080; }
-        label { font-weight: bold; }
-        .info { color: #555; margin-bottom: 16px; }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<div class="container">
     <h1>Matplanering</h1>
     <div class="info">
-        Ange dina ingredienser på <b>engelska</b>, separerade med kommatecken.<br>
-        Exempel: <i>egg, milk, flour, sugar</i>
+        Ange dina ingredienser på <b>svenska</b>, separerade med kommatecken.<br>
+        Exempel: <i>mjöl, ägg, mjölk, smör</i>
     </div>
     <form method="post">
         <label for="ingredients">Vilka ingredienser har du hemma?</label><br>
@@ -32,14 +21,15 @@
     <ul>
         {% for match in matches %}
             <li>
-                <strong>{{ match.name }}</strong><br>
-                <span class="matched">Du har: {{ match.matched|join(', ') }}</span><br>
-                <span class="missing">Saknas: {{ match.missing|join(', ') }}</span>
+                <strong>{{ match.titel }}</strong><br>
+                <span class="matched">Du har: {{ match.har|join(', ') }}</span><br>
+                <span class="missing">Saknas: {{ match.saknas|join(', ') }}</span>
             </li>
         {% endfor %}
         {% if matches|length == 0 and user_ingredients %}
             <li>Inga matchande recept hittades.</li>
         {% endif %}
     </ul>
+</div>
 </body>
 </html>
