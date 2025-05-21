@@ -11,7 +11,7 @@ recept = [
     },
     {
         "titel": "Köttfärssås",
-        "ingredienser": ["köttfärs", "lök", "krossade tomater", "vitlök", "olja", "salt", "peppar"]
+        "ingredienser": ["pasta", "köttfärs", "lök", "krossade tomater"]
     },
     {
         "titel": "Potatissallad",
@@ -20,6 +20,10 @@ recept = [
     {
         "titel": "Korv Stroganoff",
         "ingredienser": ["falukorv", "lök", "tomatpure", "grädde"]
+    },
+    {
+        "titel": "Pasta Alfredo",
+        "ingredienser": ["pasta", "grädde", "parmesanost"]
     }
 ]
 
