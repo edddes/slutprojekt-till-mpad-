@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-#här la jag in recepten istället för hela databasen. Det blev för mycket och dessutom var den på engelska.
+#Här la jag in recepten istället för hela databasen. Det blev för mycket och dessutom var den på engelska. Finns även en readme fil.
 recept = [
     {
         "titel": "Pannkakor",
